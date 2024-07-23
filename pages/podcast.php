@@ -1,69 +1,11 @@
-<!DOCTYPE html>
-
-<html lang="pt">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" ">
-
-    <title> +Kwanza | Podcast</title>
-
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <!-- Icons -->
-
-    <!-- Style -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/objects.css">
-    <link rel="stylesheet" href="../assets/css/root.css">
-    <link rel="stylesheet" href="../assets/css/midiaQ.css">
-</head>
+<?php
+require_once '../controllers/conection.php';
+require_once '../components/head.php';
+?>
 
 <body>
 
-    <!-- Header -->
-    <header class="flex a-center j-between normal-font small-sz">
-        <section class="logo-container">
-            <img src="../assets/img/logo.svg" alt="Logo do +Kwanza" class="logo">
-        </section>
-
-        <!-- Destop Navgation -->
-        <nav class="menu-desktop hide-mobile flex row j-around a-center">
-
-            <ul class="flex row">
-                <li><a href="" class="nav-link">Home</a></li>
-                <li><a href="" class="nav-link">Podcast</a></li>
-                <li><a href="" class="nav-link">Sobre nós</a></li>
-                <li><a href="" class="nav-link">Contactos</a></li>
-            </ul>
-
-        </nav>
-
-        <!-- Mobile Navgation -->
-        <section class="hide-desktop">
-            <nav class="navbar menu-mobile">
-                <li>
-                    <a href="#" class="flex row" id="menu-icon">
-                        <img class="icon-menu" src="../assets/img/icon/menu.webp" alt="menu">
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="" class="nav-link">Home</a></li>
-                        <li><a href="" class="nav-link">Podcast</a></li>
-                        <li><a href="" class="nav-link">Sobre nós</a></li>
-                        <li><a href="" class="nav-link">Contactos</a></li>
-                    </ul>
-                </li>
-            </nav>
-        </section>
-
-        <a href="" class="hide-mobile newsletter-button">Newsletter</a>
-
-    </header>
+    <?php require_once '/../components/header.php' ?>
 
     <span class="modeswitcher" id="colorMode"><ion-icon name="sunny"></ion-icon></span>
     <!-- Main Content -->
@@ -94,9 +36,9 @@
                     <section class="view-content flex col j-between">
                         <h1>O IMPACTO DA AGT NA ECONOMIA com ANISIO SAMANDJATA</h1>
                         <a href="" class="canallink">+Kwanza</a>
-                        <p>Anísio Samandjata é um jovem que sonha com uma Angola melhor, ele é Mestre em Ciências Jurídico-Políticas, 
+                        <p>Anísio Samandjata é um jovem que sonha com uma Angola melhor, ele é Mestre em Ciências Jurídico-Políticas,
                             Chefe do Departamento dos serviços Fiscais na Administração Geral
-                             Tributaria e esteve no  @maiskwanza  Podcast onde falamos sobre temas diversos ligados a economia Angolana...</p>
+                            Tributaria e esteve no @maiskwanza Podcast onde falamos sobre temas diversos ligados a economia Angolana...</p>
                         <h2>19 de jul. de 2024 | 1.176 visualizações</h2>
                     </section>
                     <a href="" class="play-icon"><img src="../assets/img/icon/play-icon.svg" alt="" srcset=""></a>
@@ -106,9 +48,9 @@
                     <section class="view-content flex col j-between">
                         <h1>O IMPACTO DA AGT NA ECONOMIA com ANISIO SAMANDJATA</h1>
                         <a href="" class="canallink">+Kwanza</a>
-                        <p>Anísio Samandjata é um jovem que sonha com uma Angola melhor, ele é Mestre em Ciências Jurídico-Políticas, 
+                        <p>Anísio Samandjata é um jovem que sonha com uma Angola melhor, ele é Mestre em Ciências Jurídico-Políticas,
                             Chefe do Departamento dos serviços Fiscais na Administração Geral
-                             Tributaria e esteve no  @maiskwanza  Podcast onde falamos sobre temas diversos ligados a economia Angolana...</p>
+                            Tributaria e esteve no @maiskwanza Podcast onde falamos sobre temas diversos ligados a economia Angolana...</p>
                         <h2>19 de jul. de 2024 | 1.176 visualizações</h2>
                     </section>
                     <a href="" class="play-icon"><img src="../assets/img/icon/play-icon.svg" alt="" srcset=""></a>
@@ -118,9 +60,9 @@
                     <section class="view-content flex col j-between">
                         <h1>O IMPACTO DA AGT NA ECONOMIA com ANISIO SAMANDJATA</h1>
                         <a href="" class="canallink">+Kwanza</a>
-                        <p>Anísio Samandjata é um jovem que sonha com uma Angola melhor, ele é Mestre em Ciências Jurídico-Políticas, 
+                        <p>Anísio Samandjata é um jovem que sonha com uma Angola melhor, ele é Mestre em Ciências Jurídico-Políticas,
                             Chefe do Departamento dos serviços Fiscais na Administração Geral
-                             Tributaria e esteve no  @maiskwanza  Podcast onde falamos sobre temas diversos ligados a economia Angolana...</p>
+                            Tributaria e esteve no @maiskwanza Podcast onde falamos sobre temas diversos ligados a economia Angolana...</p>
                         <h2>19 de jul. de 2024 | 1.176 visualizações</h2>
                     </section>
                     <a href="" class="play-icon"><img src="../assets/img/icon/play-icon.svg" alt="" srcset=""></a>
@@ -130,9 +72,9 @@
                     <section class="view-content flex col j-between">
                         <h1>O IMPACTO DA AGT NA ECONOMIA com ANISIO SAMANDJATA</h1>
                         <a href="" class="canallink">+Kwanza</a>
-                        <p>Anísio Samandjata é um jovem que sonha com uma Angola melhor, ele é Mestre em Ciências Jurídico-Políticas, 
+                        <p>Anísio Samandjata é um jovem que sonha com uma Angola melhor, ele é Mestre em Ciências Jurídico-Políticas,
                             Chefe do Departamento dos serviços Fiscais na Administração Geral
-                             Tributaria e esteve no  @maiskwanza  Podcast onde falamos sobre temas diversos ligados a economia Angolana...</p>
+                            Tributaria e esteve no @maiskwanza Podcast onde falamos sobre temas diversos ligados a economia Angolana...</p>
                         <h2>19 de jul. de 2024 | 1.176 visualizações</h2>
                     </section>
                     <a href="" class="play-icon"><img src="../assets/img/icon/play-icon.svg" alt="" srcset=""></a>
@@ -142,7 +84,7 @@
             <a href="" class="hide-mobile newsletter-button">Carregar mais</a>
         </section>
     </main>
-     
+
     <!-- Footer -->
     <footer class="flex col content">
         <section class="test"></section>

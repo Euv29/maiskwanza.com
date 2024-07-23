@@ -18,7 +18,7 @@
             </section>
 
             <section class="podcast-btn flex f-center f-width">
-                <a href="pages/podcast.html" class="newsletter-button">Ver mais</a>
+                <a href="pages/podcast.php" class="newsletter-button">Ver mais</a>
             </section>
 
         </section>
