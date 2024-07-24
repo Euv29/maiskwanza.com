@@ -89,3 +89,13 @@
     border-radius: 2rem;
     cursor: pointer;
 }
+.stat-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 3rem;
+    color: var(--white-color);
+    background: var(--transparent-black);
+    border-radius: var(--button-radius);
+}

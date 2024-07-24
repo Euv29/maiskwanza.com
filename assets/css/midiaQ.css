@@ -246,4 +246,16 @@
     .newsletter-recomendation{
         width: 100%;
     }
+
+    /*PÁGINA DOS PODCASTS*/
+
+    .grid-view .view-item{
+        width: 80%;
+        height: 35rem;
+    }
+    .mais-recente, .popularidade, .mais-antigo{
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+    }
 }
