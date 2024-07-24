@@ -13,6 +13,7 @@ html{
 
 body{
     overflow-x: 11   11              hidden;
+    position: relative;
 }
 
 header{
@@ -42,15 +43,6 @@ header .nav-link, .newsletter-button{
 
 header .menu-desktop ul{
     gap: var(--mid-sz);
-}
-
-.newsletter-button{
-    background: var(--primary-color);
-    padding: var(--button-p);
-    border-radius: var(--button-radius);
-    font-size: var(--small-sz);
-    font-weight: var(--normal-font);
-    transition: all .1s ease-in-out;
 }
 
 .newsletter-button:hover{
@@ -392,17 +384,76 @@ footer .copy{
 .recomendation-card-area{
     gap: 2rem;
 }
-.newsletter-recomendation-card {
-    width: 100%;
-    height: 25rem;
-    overflow: hidden;
-    border-radius: var(--button-p);
-    position: relative;
-    padding: var(--small-sz);
-}
 .newsletter-recomendation-card .description h1{
     font-size: var(--small-sz);
 }
 .newsletter-recomendation-card .description h2{
     font-size: var(--vsmall-sz);
+}
+
+
+/*Página de podcasts*/
+
+.order-views-container{
+    padding: 2rem 0;
+}
+.order{
+    padding: 1rem 2rem;
+    background-color: var(--black-color);
+    border: none;
+    border-bottom: var(--primary-color) 0.2rem solid;
+    color: var(--white-color);
+    outline: none;
+}
+.views{
+    font-size: var(--mid-sz);
+    color: var(--white-color);
+    gap: 2rem;
+}
+.views .ative{
+    color: var(--primary-color);
+}
+.views a{
+    cursor: pointer;
+}
+.views a:hover{
+    color: var(--primary-color);
+    transition: 0.6s;
+}
+.view-item h1{ 
+    font-size: 1.5rem;
+}
+.grid-view .view-item h2{ 
+    font-size: 1rem;
+}
+.view-item p{
+    font-weight: 400;
+    font-size: var(--small-sz);
+    width: 80rem;
+    line-height: 2.6rem;
+}
+.grid-view .view-item p,.grid-view  .canallink{
+    display: none;
+}
+.canallink{
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: var(--small-sz);
+}
+.view-content{
+    gap: 1.5rem;
+}
+.play-icon{
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+}
+.play-icon img{
+    width: 4rem;
+}
+
+.grid-view{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
 }

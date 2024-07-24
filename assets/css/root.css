@@ -7,6 +7,7 @@
     --light-color: #ececec2f;
     --gray-color: #929292;
     --cian-color: #05f2db;
+    --transparent-black: #0000004c;
 
     /* Size */
     --big-sz: 3.4rem;
@@ -24,6 +25,17 @@
     /* Borders */
     --button-radius: 0.5rem;
 
+}
+
+.light-mode{
+    --primary-color: #F27405;
+    --black-color: #ffffff;
+    --dark-color: #FCFEF4;
+    --white-color: #000;
+    --light-color: #ececec2f;
+    --gray-color: #929292;
+    --cian-color: #05f2db;
+    --transparent-black: #EBEBEB;
 }
 
 .container {
