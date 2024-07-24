@@ -44,7 +44,7 @@ require_once __DIR__ . '/controllers/conection.php';
 
             <ul class="flex row">
                 <li><a href="#home" class="page-scroll nav-link" id="btn-home-on">Home</a></li>
-                <li><a href="pages/podcast.php" class="page-scroll nav-link">Podcast</a></li>
+                <li><a href="./podcast.php" class="page-scroll nav-link">Podcast</a></li>
                 <li><a href="#about" class="page-scroll nav-link">Sobre nós</a></li>
                 <li><a href="#contact" class="page-scroll nav-link">Contactos</a></li>
             </ul>
@@ -110,7 +110,7 @@ require_once __DIR__ . '/controllers/conection.php';
             </section>
 
             <section class="podcast-btn flex t-center f-center">
-                <a href="pages/podcast.php" class="newsletter-button">Mais vídeos</a>
+                <a href="./podcast.php" class="newsletter-button">Mais vídeos</a>
             </section>
         </section>
 

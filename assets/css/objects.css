@@ -66,15 +66,14 @@
     position: relative;
 }
 .list-view .view-item{
-    gap: 4rem;
+    gap: 3rem;
     width: 100%;
     height: 25rem;
     border-radius: 3rem;
-    margin-bottom: 2rem;
 }
 .grid-view .view-item{
     gap: 2rem;
-    height: 36rem;
+    height: 45rem;
     width: 44rem;
     flex-direction: column;
     border-radius: 2rem;

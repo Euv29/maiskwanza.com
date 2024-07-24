@@ -454,7 +454,7 @@ footer .copy{
     font-size: var(--small-sz);
 }
 .view-content{
-    gap: 1.5rem;
+    gap: 1rem;
 }
 .play-icon{
     position: absolute;
@@ -464,8 +464,7 @@ footer .copy{
 .play-icon img{
     width: 4rem;
 }
-
-.grid-view{
+.mais-recente, .popularidade, .mais-antigo{
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
