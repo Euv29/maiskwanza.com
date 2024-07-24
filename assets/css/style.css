@@ -473,3 +473,111 @@ footer .copy{
     flex-wrap: wrap;
     gap: 2rem;
 }
+
+/* AMBIENTE DO ADMINISTRADOR */
+
+.menu-lateral{
+    position: initial;
+    width: 20rem;
+    height: 100vh;
+    background: var(--black-color);
+    padding: 2rem;
+}
+.menu-lateral .logo-container{
+
+    margin-bottom: 2rem;
+}
+.menu-lateral nav{
+    gap: 2rem;
+    width: 100%;
+}
+.menu-lateral nav a{
+    font-size: var(--small-sz);
+    color: var(--white-color);
+    font-weight: 600;
+    padding: var(--button-p);
+    border-radius: var(--button-radius);
+}
+.menu-lateral nav .ative{
+    background: var(--primary-color);
+}
+.menu-lateral nav a:hover{
+    background: #8a0032;
+    transition: 0.;
+}
+.main-adm{
+    color: var(--white-color);
+}
+.main-adm .header-section{
+    padding: 2rem;
+}
+.user-info {
+    gap: 1rem;
+    cursor: pointer;
+}
+.user-info ion-icon{
+    font-size: 3rem;
+}
+.stats-card-area{
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+.user-modal{
+    position: absolute;
+    gap: 1rem;
+    right: 2rem;
+    padding: 2rem;
+    background-color: var(--transparent-black);
+    border-radius: var(--button-radius);
+}
+.user-modal a{
+    color: var(--white-color);
+    font-size: var(--vsmall-sz);
+}
+.off {
+    display:none;
+}
+.action-card-area{
+    border-top: var(--light-color) 1px solid;
+}
+.action-area{
+    width: 70%;
+    gap: 3rem;
+}
+.action-card-area .artigos{
+    width: 30%;
+    border-left: var(--light-color) 1px solid;
+    height: 100%;
+}
+.artigo-card{
+    width: 100%;
+}
+.artigo-card img{
+    width: 100%;
+}
+.action-card{
+    display: flex;
+    gap: 1rem;
+    font-size: var(--mid-sz);
+    padding: 2rem 3rem;
+    background: var(--transparent-black);
+    cursor: pointer;
+    border-radius: var(--button-radius);
+}
+.action-card:hover{
+    background-color: var(--primary-color);
+    transition: 0.3s;
+}
+.editor-section{
+    position: relative
+}
+.add_image{
+    width: ;
+}
+.back{
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    font-size: 2rem;
+    cursor: pointer;
+}

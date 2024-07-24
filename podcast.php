@@ -27,13 +27,6 @@ require_once './controllers/conection.php';
     <link rel="stylesheet" href="./assets/css/midiaQ.css">
 </head>
 
-<!-- Coloca em um CSS -->
-<style>
-    .off {
-        display:none;
-    }
-</style>
-
 <body>
 
     <!-- Header -->
@@ -89,7 +82,7 @@ require_once './controllers/conection.php';
                     <option id="popular" value="2">Popularidade</option>
                     <option id="antigo" value="3">Mais antigos</option>
                 </select>
-                <section class="views flex row">
+                <section class="views flex row hide-mobile">
                     <a class="ative " id="list-view"><ion-icon name="list"></ion-icon></a>
                     <a class="" id="grid-view"><ion-icon name="grid"></ion-icon></a>
                 </section>
