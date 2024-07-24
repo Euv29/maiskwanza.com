@@ -62,6 +62,18 @@
                         <li><a href="./index.php#podcast" class="page-scroll nav-link">Podcast</a></li>
                         <li><a href="./sobrenos.php#about" class="page-scroll nav-link">Sobre nós</a></li>
                         <li><a href="./index.php#contact" class="page-scroll nav-link">Contactos</a></li>
+                        <li class=" dackmode-btn ">
+                            <label class="switch hide-desktop nav-link">
+                                <input type="checkbox" id="darkModeToggle-mobile">
+                                <span class="icon-s sun">
+                                    <ion-icon class="icon" name="moon"></ion-icon> Dark Mode
+                                </span>
+                                <span class="icon-s moon">
+                                    <ion-icon class="icon" name="sunny"></ion-icon> Light Mode
+                                </span>
+                            </label>
+                        </li>
+                        <li><a href="./newsletter.php" class=" newsletter-button">Newsletter</a></li>
                     </ul>
                 </li>
             </nav>
@@ -247,10 +259,15 @@
 <script>
     // Darck mode
     const toggle = document.getElementById('darkModeToggle');
+    const toggleMb = document.getElementById('darkModeToggle-mobile');
     const body = document.body;
 
     toggle.addEventListener('change', () => {
         body.classList.toggle('dark-mode', toggle.checked);
+    });
+
+    toggleMb.addEventListener('change', () => {
+        body.classList.toggle('dark-mode', toggleMb.checked);
     });
 </script>
 
