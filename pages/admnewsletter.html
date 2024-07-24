@@ -30,7 +30,7 @@
         </nav>
     </header>
     <main class="main-adm container"> 
-        <section class="header-section flex row j-between">
+        <section class="header-section row j-between flex">
             <h1>Newsletter</h1>
             <section class="user-info flex row a-center" id="user-info">
                 <p class="">useremail@maiskwanza.com</p>
@@ -43,7 +43,7 @@
                 <a href="">Sair</a>
             </section>
         </section>
-        <section class="stats-card-area row f-center flex">
+        <section class="stats-card-area row f-center flex" id="sc">
             <section class="stat-card">
                 <img src="../assets/img/icon/news-icon.svg" alt="">
                 <section class="stat-description">
@@ -67,9 +67,9 @@
             </section>
         </section>
 
-        <section class="action-card-area content  row f-center flex">
+        <section class="action-card-area content row f-center flex" id="ac">
             <section class="action-area flex">
-                <section class="action-card">
+                <section class="action-card" id="write">
                     <ion-icon name="newspaper"></ion-icon>
                     <section class="stat-description">
                         <h2>Escrever Artigo</h2>
@@ -94,16 +94,72 @@
             </section>
         </section>
 
-        <section class=""> </section>
+        <section class="editor-section off f-center" id="edit"> 
+            <span class="back flex f-center" id="back-button">
+                <ion-icon name="caret-back" ></ion-icon> Voltar
+            </span>
+            <form action="" class="flex row">
+                <div class="flex col">
+                    <select name="" id="" class="order">
+                        <option value="">Categoria</option>
+                        <option value="">Inovação</option>
+                        <option value="">Mercado</option>
+                        <option value="">Finanças</option>
+                        <option value="">Negócios</option>
+                        <option value="">Podcast</option>
+                    </select>
+
+                    <section class="add_image" id="imagem">
+                        <img src="../assets/img/logo.svg" alt="" id="foto">
+                        <input type = "file" id="foto_capa" name = "foto_capa" accept="image/*" required>
+                    </section>
+                </div>
+                <div class="flex col">
+                    <input type="text" name="titulo" placeholder="Título do artigo">
+                    <textarea name="" id=""></textarea>
+                </div>
+                
+            </form>
+        </section>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script>
+
         var userinfo = document.getElementById('user-info');
         var usermodal = document.getElementById('user-modal');
         userinfo.onclick = function () {
             usermodal.classList.toggle('off');
         }
+
+        var back = document.getElementById('back-button');
+        var write = document.getElementById('write');
+        var edit = document.getElementById('edit');
+        var ac = document.getElementById('ac');
+        var sc = document.getElementById('sc');
+
+        back.onclick = function(){
+            edit.classList.remove('flex');
+            edit.classList.add('off');
+            
+            ac.classList.add('flex');
+            ac.classList.remove('off');
+            
+            sc.classList.add('flex');
+            sc.classList.remove('off');    
+        }
+
+        write.onclick = function(){
+            edit.classList.add('flex');
+            edit.classList.remove('off');
+            
+            ac.classList.remove('flex');
+            ac.classList.add('off');
+            
+            sc.classList.remove('flex');
+            sc.classList.add('off');    
+        }
     </script>
+    <script src="../assets/js/foto.js"></script>
 </body>
 </html>
