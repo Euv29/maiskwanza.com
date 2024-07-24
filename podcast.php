@@ -1,6 +1,6 @@
 <?php
 //require_once '../controllers/conection.php';
-require_once __DIR__ . '/../controllers/conection.php';
+require_once './controllers/conection.php';
 ?>
 <!DOCTYPE html>
 
@@ -19,12 +19,12 @@ require_once __DIR__ . '/../controllers/conection.php';
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- Icons -->
-
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!-- Style -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/objects.css">
-    <link rel="stylesheet" href="../assets/css/root.css">
-    <link rel="stylesheet" href="../assets/css/midiaQ.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/objects.css">
+    <link rel="stylesheet" href="./assets/css/root.css">
+    <link rel="stylesheet" href="./assets/css/midiaQ.css">
 </head>
 
 <!-- Coloca em um CSS -->
@@ -39,17 +39,17 @@ require_once __DIR__ . '/../controllers/conection.php';
     <!-- Header -->
     <header class="flex a-center j-between normal-font small-sz">
         <section class="logo-container">
-            <img src="../assets/img/logo.svg" alt="Logo do +Kwanza" class="logo">
+            <img src="./assets/img/logo.svg" alt="Logo do +Kwanza" class="logo">
         </section>
 
         <!-- Destop Navgation -->
         <nav class="menu-desktop hide-mobile flex row j-around a-center">
 
             <ul class="flex row">
-                <li><a href="../index.php" class="nav-link">Home</a></li>
+                <li><a href="./index.php" class="nav-link">Home</a></li>
                 <li><a href="" class="nav-link" id="btn-podcast-on">Podcast</a></li>
-                <li><a href="../index.php/#about-us" class="nav-link">Sobre nós</a></li>
-                <li><a href="#contact" class="nav-link">Contactos</a></li>
+                <li><a href="./index.php#about-us" class="nav-link">Sobre nós</a></li>
+                <li><a href="./index.php#contact" class="nav-link">Contactos</a></li>
             </ul>
 
         </nav>
@@ -59,19 +59,19 @@ require_once __DIR__ . '/../controllers/conection.php';
             <nav class="navbar menu-mobile">
                 <li>
                     <a href="#" class="flex row" id="menu-icon">
-                        <img class="icon-menu" src="../assets/img/icon/menu.webp" alt="menu">
+                        <img class="icon-menu" src="./assets/img/icon/menu.webp" alt="menu">
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="" class="nav-link">Home</a></li>
+                        <li><a href=./index.php"" class="nav-link">Home</a></li>
                         <li><a href="" class="nav-link">Podcast</a></li>
-                        <li><a href="" class="nav-link">Sobre nós</a></li>
-                        <li><a href="" class="nav-link">Contactos</a></li>
+                        <li><a href="./index.php#about-us" class="nav-link">Sobre nós</a></li>
+                        <li><a href="./index.php#contact" class="nav-link">Contactos</a></li>
                     </ul>
                 </li>
             </nav>
         </section>
 
-        <a href="" class="hide-mobile newsletter-button">Newsletter</a>
+        <a href="./newsletter.php" class="hide-mobile newsletter-button">Newsletter</a>
 
     </header>
 
@@ -85,15 +85,9 @@ require_once __DIR__ . '/../controllers/conection.php';
             </section>
             <section class="order-views-container container flex row j-between">
                 <select name="order" id="order" class="order">
-
-
-                    <!-- Faz um JS tipo o do darkmode para Actualizar e activar/desactivar os filtros e não se perder tempo na renderização -->
-
-
-
-                    <option id="recente">Mais recentes</option>
-                    <option id="popular">Popularidade</option>
-                    <option id="antigo">Mais antigos</option>
+                    <option id="recente" value="1">Mais recentes</option>
+                    <option id="popular" value="2">Popularidade</option>
+                    <option id="antigo" value="3">Mais antigos</option>
                 </select>
                 <section class="views flex row">
                     <a class="ative " id="list-view"><ion-icon name="list"></ion-icon></a>
@@ -104,8 +98,10 @@ require_once __DIR__ . '/../controllers/conection.php';
         <section class="view-main content flex  col a-center">
 
             <section class="view-wrap list-view" id="view-wrap">
+
                 <!-- Apresentar pelo mais recente -->
-                <section class="mais-recente">
+                 
+                <section class="mais-recente" id="maisr">
                     <?php foreach ($videos as $video) : ?>
                         <section class="view-item">
                             <img src="<?php echo $video['snippet']['thumbnails']['standard']['url'] ?>" alt="" class="thumbnail">
@@ -116,13 +112,13 @@ require_once __DIR__ . '/../controllers/conection.php';
                                 <p></p>
                                 <h2><?php echo date("d-m-Y", strtotime($video['snippet']['publishedAt'])); ?> | <?php echo showViews($video['snippet']['resourceId']['videoId'], $videosStat); ?> visualizações</h2>
                             </section>
-                            <a href="<?php echo 'https://www.youtube.com/watch?v=' . $video['snippet']['resourceId']['videoId'] ?>" target="_blank" class="play-icon"><img src="../assets/img/icon/play-icon.svg" alt="" srcset=""></a>
+                            <a href="<?php echo 'https://www.youtube.com/watch?v=' . $video['snippet']['resourceId']['videoId'] ?>" target="_blank" class="play-icon"><img src="./assets/img/icon/play-icon.svg" alt="" srcset=""></a>
                         </section>
                     <?php endforeach; ?>
                 </section>
 
                 <!-- Apresentar por views -->
-                <section class="popularidade off">
+                <section class="popularidade off" id="maisp">
                     <?php foreach ($videosStat as $video) : ?>
                             <section class="view-item">
                                 <img src="<?php echo $video['conteudo']['thumbnails']['standard']['url'] ?>" alt="" class="thumbnail">
@@ -133,14 +129,14 @@ require_once __DIR__ . '/../controllers/conection.php';
                                     <p></p>
                                     <h2><?php echo date("d-m-Y", strtotime($video['conteudo']['publishedAt'])); ?> | <?php echo showViews($video['conteudo']['resourceId']['videoId'], $videosStat); ?> visualizações</h2>
                                 </section>
-                                <a href="<?php echo 'https://www.youtube.com/watch?v=' . $video['conteudo']['resourceId']['videoId'] ?>" target="_blank" class="play-icon"><img src="../assets/img/icon/play-icon.svg" alt="" srcset=""></a>
+                                <a href="<?php echo 'https://www.youtube.com/watch?v=' . $video['conteudo']['resourceId']['videoId'] ?>" target="_blank" class="play-icon"><img src="./assets/img/icon/play-icon.svg" alt="" srcset=""></a>
                             </section>
                         <?php endforeach; ?>
                 </section>
 
 
                 <!-- Apresentar pelo mais antigo -->
-                <section class="mais-antigo off">
+                <section class="mais-antigo off" id="maisa">
                     <?php foreach ($oldestVideos as $video) : ?>
                         <section class="view-item">
                             <img src="<?php echo $video['snippet']['thumbnails']['standard']['url'] ?>" alt="" class="thumbnail">
@@ -151,7 +147,7 @@ require_once __DIR__ . '/../controllers/conection.php';
                                 <p></p>
                                 <h2><?php echo date("d-m-Y", strtotime($video['snippet']['publishedAt'])); ?> | <?php echo showViews($video['snippet']['resourceId']['videoId'], $videosStat); ?> visualizações</h2>
                             </section>
-                            <a href="<?php echo 'https://www.youtube.com/watch?v=' . $video['snippet']['resourceId']['videoId'] ?>" target="_blank" class="play-icon"><img src="../assets/img/icon/play-icon.svg" alt="" srcset=""></a>
+                            <a href="<?php echo 'https://www.youtube.com/watch?v=' . $video['snippet']['resourceId']['videoId'] ?>" target="_blank" class="play-icon"><img src="./assets/img/icon/play-icon.svg" alt="" srcset=""></a>
                         </section>
                     <?php endforeach; ?>
                 </section>
@@ -166,7 +162,7 @@ require_once __DIR__ . '/../controllers/conection.php';
         <section class="test"></section>
         <section class="footer-container flex row j-around a-center">
             <section class="logo-container">
-                <img src="../assets/img/logo.svg" alt="Logo do +Kwanza" class="logo">
+                <img src="./assets/img/logo.svg" alt="Logo do +Kwanza" class="logo">
             </section>
             <section class="navegacao">
                 <h1>Navegaçao</h1>
@@ -191,7 +187,7 @@ require_once __DIR__ . '/../controllers/conection.php';
                 <p>Receba as noticias direto no seu email</p>
                 <form action="" class="newsletter-sub-form">
                     <input type="email" placeholder="Seu email">
-                    <button type="submit" class=""><img src="../assets/img/icon/send.svg" alt="" srcset=""></button>
+                    <button type="submit" class=""><img src="./assets/img/icon/send.svg" alt="" srcset=""></button>
                 </form>
             </section>
         </section>
@@ -203,34 +199,11 @@ require_once __DIR__ . '/../controllers/conection.php';
     <!-- Script -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="../assets/js/index.js"></script>
-    <script src="../assets/js/switchView.js"></script>
-    <script src="../assets/js/lightMode.js"></script>
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/switchView.js"></script>
+    <script src="./assets/js/lightMode.js"></script>
+    <script src="./assets/js/order.js"></script>
 
-    <script>
-        let selectAntigo = document.getElementById("antigo");
-        let selectPopular = document.getElementById("popular");
-        let selectRecente = document.getElementById("recente");
-
-        selectAntigo.onclick = function() {
-            let popular = document.getElementsByClassName('popularidade').classList.add('off');
-            let recente = document.getElementsByClassName('recente').classList.add('off');
-            let antigo = document.getElementsByClassName('mais-antigo').classList.remove('off');
-        }
-
-        selectPopular.onclick = function() {
-            document.getElementsByClassName('popularidade').classList.remove('off');
-            document.getElementsByClassName('recente').classList.add('off');
-            document.getElementsByClassName('mais-antigo').classList.add('off');
-        }
-
-        selectRecente.onclick = function() {
-            let popular = document.getElementsByClassName('popularidade').classList.add('off');
-            let recente = document.getElementsByClassName('recente').classList.remove('off');
-            let antigo = document.getElementsByClassName('mais-antigo').classList.add('off');
-        }
-
-    </script>
 </body>
 
 </html>
