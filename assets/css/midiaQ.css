@@ -246,7 +246,7 @@
     .newsletter-recomendation{
         width: 100%;
     }
-
+  
     /*PÁGINA DOS PODCASTS*/
 
     .grid-view .view-item{
@@ -257,5 +257,18 @@
         flex-direction: column;
         align-items: center;
         width: 100vw;
+
+    .icon-s{ 
+        color: #fff;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input:checked ~ .icon-s.moon {
+        color: #fff;
+        display: none;
+
     }
 }

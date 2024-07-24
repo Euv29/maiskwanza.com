@@ -9,7 +9,7 @@
 .sm-Card{
     display: flex;
     flex-direction: column-reverse;
-    color: var(--white-color);
+    color: var(--text-white);
     width: 30rem;
     height: 40rem;
     padding: var(--small-sz);
@@ -23,7 +23,8 @@
     min-width: 10rem;
     border: solid 1px var(--white-color);
     border-radius: var(--button-radius);
-    color: var(--white-color);
+    background-color: #000;
+    color: var(--text-white);
     display: flex;
     flex-direction: row;
 }
@@ -35,7 +36,7 @@
     font-size: var(--small-sz);
     font-weight: var(--normal-font);
     transition: all .1s ease-in-out;
-    color: var(--white-color);
+    color: var(--text-white);
 }
 
 .newsletter-card{
@@ -47,7 +48,7 @@
     border-radius: 1rem;
     display: flex;
     align-items: end;
-    color: var(--white-color);
+    color: var(--text-white);
     padding: var(--small-sz);
 }
 .newsletter-recomendation-card {
@@ -99,3 +100,40 @@
     background: var(--transparent-black);
     border-radius: var(--button-radius);
 }
+
+
+/* Darkmode btn */
+.switch {
+    display: flex;
+    align-items: center;
+}
+
+.switch input {
+    display: none;
+}
+
+.icon-s {
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.4s;
+}
+
+.icon-s.sun {
+    display: none;
+}
+
+input:checked ~ .icon-s.sun {
+    display: block;
+}
+
+input:checked ~ .icon-s.moon {
+    color: #333;
+    display: none;
+}
+
+input:not(:checked) ~ .icon-s.moon {
+    display: block;
+    color: #FFD700;
+}
+

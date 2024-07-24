@@ -4,10 +4,12 @@
     --black-color: #000000;
     --dark-color: #121212;
     --white-color: #FFFFFF;
-    --light-color: #ececec2f;
+    --text-white: #ffffff;
+    --light-color: #ececec;
     --gray-color: #929292;
     --cian-color: #05f2db;
     --transparent-black: #0000004c;
+    --button-hover: #8a0032;
 
     /* Size */
     --big-sz: 3.4rem;
@@ -27,7 +29,26 @@
 
 }
 
-.light-mode{
+body{
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.dark-mode {
+    /* COLOURS */
+    --primary-color: #F27405;
+    --black-color: #FFFFFF;
+    --dark-color: #ececec2f;
+    --white-color: #000000;
+    --text-white: #ffffff;
+    --light-color: #ececec2f;
+    --gray-color: #929292;
+    --cian-color: #05f2db;
+    --transparent-black: #EBEBEB;
+    --button-hover: #863f00;
+}
+
+
+.light-mode {
     --primary-color: #F27405;
     --black-color: #ffffff;
     --dark-color: #FCFEF4;
@@ -42,37 +63,37 @@
     width: 100%;
 }
 
-.content{
+.content {
     padding: 5rem
 }
 
-.over-hidden{
+.over-hidden {
     overflow: hidden;
 }
 
-.full{
+.full {
     width: 100%;
     height: 100%;
 }
 
-.f-width{
+.f-width {
     width: 100%;
 }
 
 /* Fonts */
-h1{
+h1 {
     font-size: 2rem;
 }
 
-h2{
+h2 {
     font-size: 1.5rem;
 }
 
-h3{
+h3 {
     font-size: 1rem;
 }
 
-p{
+p {
     font-size: 1rem;
 }
 
@@ -83,6 +104,7 @@ p{
 .small-sz {
     font-size: var(--small-sz);
 }
+
 /* FlexBox */
 
 .flex {
@@ -102,37 +124,40 @@ p{
     align-items: center;
 }
 
-.a-center{
+.a-center {
     align-items: center;
 }
 
-.j-center{
+.j-center {
     justify-content: center;
-}	
+}
 
-.j-between{
+.j-between {
     justify-content: space-between;
 }
 
-.j-evenly{
+.j-evenly {
     justify-content: space-evenly;
 }
 
-.j-around{
+.j-around {
     justify-content: space-around;
 }
-.t-center{
+
+.t-center {
     text-align: center;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     background-color: var(--black-color);
     width: 3px;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     background: var(--primary-color);
     border-radius: 12px;
 }
-.Card-Area::-webkit-scrollbar{
+
+.Card-Area::-webkit-scrollbar {
     height: 2px;
 }
