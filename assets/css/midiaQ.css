@@ -246,4 +246,17 @@
     .newsletter-recomendation{
         width: 100%;
     }
+
+    .icon-s{ 
+        color: #fff;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input:checked ~ .icon-s.moon {
+        color: #fff;
+        display: none;
+    }
 }

@@ -33,8 +33,12 @@ header{
     width: 80%;
 }
 
-header .nav-link, .newsletter-button{
+header .nav-link{
     color: var(--white-color);
+} 
+
+.newsletter-button{
+    color: var(--text-white);
 }
 
 .menu-desktop{
@@ -46,7 +50,7 @@ header .menu-desktop ul{
 }
 
 .newsletter-button:hover{
-    background:#8a0032;
+    background: var(--button-hover);
 }
 
 main{
@@ -178,7 +182,7 @@ main{
 }
 
 .text-sobrenos{
-    color: var(--white-color);
+    color: var(--text-white);
     font-weight: var(--normal-font);
     font-size: var(--mid-sz);
     width: 40%;
@@ -283,7 +287,7 @@ footer .copy{
 
 .info-container, .contact-container{
     height: auto;
-    color: var(--white-color);
+    color: var(--text-white);
 }
 .aboutustext p, .contact-container p{
     font-size: var(--small-sz);

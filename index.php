@@ -1,4 +1,4 @@
-<?php 
+<?php
 //require_once 'controllers/conection.php'; 
 require_once __DIR__ . '/controllers/conection.php';
 ?>
@@ -21,9 +21,11 @@ require_once __DIR__ . '/controllers/conection.php';
 
     <!-- Icons -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
     <!-- Style -->
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/objects.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/root.css">
     <link rel="stylesheet" href="./assets/css/midiaQ.css">
     <link rel="stylesheet" href="./assets/css/animations.css">
@@ -63,12 +65,36 @@ require_once __DIR__ . '/controllers/conection.php';
                         <li><a href="pages/podcast.php" class="page-scroll nav-link">Podcast</a></li>
                         <li><a href="#about" class="page-scroll nav-link">Sobre nós</a></li>
                         <li><a href="#contact" class="page-scroll nav-link">Contactos</a></li>
+                        <li class=" dackmode-btn ">
+                            <label class="switch hide-desktop nav-link">
+                                <input type="checkbox" id="darkModeToggle-mobile">
+                                <span class="icon-s sun">
+                                    <ion-icon class="icon" name="moon"></ion-icon> Dark Mode
+                                </span>
+                                <span class="icon-s moon">
+                                    <ion-icon class="icon" name="sunny"></ion-icon> Light Mode
+                                </span>
+                            </label>
+                        </li>
+                        <li><a href="./newsletter.php" class=" newsletter-button">Newsletter</a></li>
                     </ul>
                 </li>
             </nav>
         </section>
 
+        <!-- Darkmode btn -->
+        <label class="switch hide-mobile">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="icon-s sun">
+                <ion-icon class="icon" name="moon"></ion-icon>
+            </span>
+            <span class="icon-s moon">
+                <ion-icon class="icon" name="sunny"></ion-icon>
+            </span>
+        </label>
+
         <a href="./newsletter.php" class="hide-mobile newsletter-button">Newsletter</a>
+
 
     </header>
 
@@ -260,5 +286,20 @@ require_once __DIR__ . '/controllers/conection.php';
     <script src="./assets/js/smoothScroll/custom.js"></script>
 
 </body>
+
+<script>
+    // Darck mode
+    const toggle = document.getElementById('darkModeToggle');
+    const toggleMb = document.getElementById('darkModeToggle-mobile');
+    const body = document.body;
+
+    toggle.addEventListener('change', () => {
+        body.classList.toggle('dark-mode', toggle.checked);
+    });
+
+    toggleMb.addEventListener('change', () => {
+        body.classList.toggle('dark-mode', toggleMb.checked);
+    });
+</script>
 
 </html>
