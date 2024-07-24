@@ -1,4 +1,7 @@
-<?php require_once 'controllers/conection.php'; ?>
+<?php 
+//require_once 'controllers/conection.php'; 
+require_once __DIR__ . '/controllers/conection.php';
+?>
 
 <!DOCTYPE html>
 
@@ -40,8 +43,8 @@
         <nav class="navbar menu-desktop hide-mobile flex row j-around a-center">
 
             <ul class="flex row">
-                <li><a href="#home" class="page-scroll nav-link">Home</a></li>
-                <li><a href="#podcast" class="page-scroll nav-link">Podcast</a></li>
+                <li><a href="#home" class="page-scroll nav-link" id="btn-home-on">Home</a></li>
+                <li><a href="pages/podcast.php" class="page-scroll nav-link">Podcast</a></li>
                 <li><a href="#about" class="page-scroll nav-link">Sobre nós</a></li>
                 <li><a href="#contact" class="page-scroll nav-link">Contactos</a></li>
             </ul>
@@ -56,8 +59,8 @@
                         <img class="icon-menu" src="./assets/img/icon/menu.webp" alt="menu">
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#home" class="page-scroll nav-link">Home</a></li>
-                        <li><a href="#podcast" class="page-scroll nav-link">Podcast</a></li>
+                        <li><a href="#home" class="page-scroll nav-link" id="btn-home-on">Home</a></li>
+                        <li><a href="pages/podcast.php" class="page-scroll nav-link">Podcast</a></li>
                         <li><a href="#about" class="page-scroll nav-link">Sobre nós</a></li>
                         <li><a href="#contact" class="page-scroll nav-link">Contactos</a></li>
                     </ul>
@@ -94,17 +97,20 @@
                 <h1>Podcasts</h1>
                 <h2>Últimos episódios</h2>
             </section>
+
             <section class="Card-Area flex scaleup">
-                <?php foreach ($videos['items'] as $video) :
-                    if ($video['snippet']['title'] != 'Private video') {
-                ?>
-                        <section>
-                            <a href="<?php echo 'https://www.youtube.com/watch?v=' . $video['snippet']['resourceId']['videoId'] ?>" class="Podcast-Card" target="_blank">
-                                <img src="<?php echo $video['snippet']['thumbnails']['standard']['url'] ?>" alt="" class="podcast-img">
-                            </a>
-                        </section>
-                <?php }
-                endforeach; ?>
+                <?php foreach ($videoshome as $video) : ?>
+                    <section>
+                        <a href="<?php echo 'https://www.youtube.com/watch?v=' . $video['snippet']['resourceId']['videoId'] ?>" class="Podcast-Card" target="_blank">
+                            <img src="<?php echo $video['snippet']['thumbnails']['standard']['url'] ?>" alt="" class="podcast-img">
+                        </a>
+                    </section>
+                <?php endforeach; ?>
+
+            </section>
+
+            <section class="podcast-btn flex t-center f-center">
+                <a href="pages/podcast.php" class="newsletter-button">Mais vídeos</a>
             </section>
         </section>
 

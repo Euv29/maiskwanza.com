@@ -1,4 +1,4 @@
-var icon = document.getElementById("colorMode");
+let icon = document.getElementById("colorMode");
 icon.onclick = function(){
         document.body.classList.toggle("light-mode");
         if(icon.tagName == 'sunny'){
