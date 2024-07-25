@@ -118,7 +118,7 @@
                 </div>
                 <div class="flex col innerform">
                     <input type="text" name="titulo" class="input-titulo" placeholder="Título do artigo">
-                    <textarea name="" id=""></textarea>
+                    <textarea name="" id="editorTextarea"></textarea>
                 </div>
             </form>
         </section>
@@ -166,8 +166,8 @@
 
 <script>
     tinymce.init({
-      selector: 'textarea',
-      plugins: 'advlist link image lists',
+      selector: '#editorTextarea',
+      plugins: 'advlist link lists',
       toolbar: 'undo redo | blocks  fontsize | bold italic underline | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
       tinycomments_mode: 'embedded',
       tinycomments_author: 'Author name',
