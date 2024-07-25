@@ -290,13 +290,14 @@ footer .copy{
     color: var(--text-white);
 }
 .aboutustext p, .contact-container p{
+    color: var(--white-color);
     font-size: var(--small-sz);
     width: 90%;
     line-height: 2.3rem;
 }
 .aboutustext h1{
     margin: 2rem;
-
+    color: var(--white-color);
 }
 .hosts-card-area{
     margin: 2rem 0;

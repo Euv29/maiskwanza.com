@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
+    <!-- Text Editor -->
+    <script src="https://cdn.tiny.cloud/1/h9gvl4d0bz4vemdpcqdo8daaldpw5f0tzxf6qpg19rgakrv2/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/objects.css">
@@ -162,4 +164,22 @@
     </script>
     <script src="../assets/js/foto.js"></script>
 </body>
+
+<script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'advlist link image lists',
+      toolbar: 'undo redo | blocks  fontsize | bold italic underline | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+      menubar: false,
+      entity_encoding: 'row',
+      mergetags_list: [
+        { value: 'First.Name', title: 'First Name' },
+        { value: 'Email', title: 'Email' },
+      ],
+      ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+    });
+  </script>
+
 </html>
