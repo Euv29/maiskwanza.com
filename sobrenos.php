@@ -43,7 +43,7 @@
 
             <ul class="flex row">
                 <li><a href="./index.php#home" class="page-scroll nav-link">Home</a></li>
-                <li><a href="./index.php#podcast" class="page-scroll nav-link">Podcast</a></li>
+                <li><a href="./podcast.php" class="page-scroll nav-link">Podcast</a></li>
                 <li><a href="#about" class="page-scroll nav-link">Sobre nós</a></li>
                 <li><a href="./index.php#contact" class="page-scroll nav-link">Contactos</a></li>
             </ul>
@@ -59,7 +59,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="./index.php#home" class="page-scroll nav-link">Home</a></li>
-                        <li><a href="./index.php#podcast" class="page-scroll nav-link">Podcast</a></li>
+                        <li><a href="./podcast.php" class="page-scroll nav-link">Podcast</a></li>
                         <li><a href="" class="page-scroll nav-link">Sobre nós</a></li>
                         <li><a href="./index.php#contact" class="page-scroll nav-link">Contactos</a></li>
                         <li class=" dackmode-btn ">
@@ -80,7 +80,7 @@
         </section>
 
         <!-- Darkmode btn -->
-        <label class="switch">
+        <label class="switch hide-mobile ">
             <input type="checkbox" id="darkModeToggle">
             <span class="icon-s sun">
                 <ion-icon class="icon" name="sunny"></ion-icon>
@@ -90,12 +90,11 @@
             </span>
         </label>
 
-        <a href="" class="hide-mobile newsletter-button">Newsletter</a>
+        <a href="./newsletter.php" class="hide-mobile newsletter-button">Newsletter</a>
 
     </header>
 
 
-    <!-- Main Content -->
     <!-- Main Content -->
     <main class="container">
         <section class="title">
@@ -172,9 +171,9 @@
             <section class="navegacao">
                 <h1>Navegação</h1>
                 <ul class="flex col">
-                    <li><a href="#hero" class="nav-link">Home</a></li>
-                    <li><a href="#podcasts" class="nav-link">Podcast</a></li>
-                    <li><a href="#about-us" class="nav-link">Sobre nós</a></li>
+                    <li><a href="./index.php#hero" class="nav-link">Home</a></li>
+                    <li><a href="./podcast.php" class="nav-link">Podcast</a></li>
+                    <li><a href="./sobrenos.php" class="nav-link">Sobre nós</a></li>
                     <li><a href="#contact" class="nav-link">Contactos</a></li>
                 </ul>
             </section>
@@ -187,12 +186,14 @@
                     <li></li>
                 </ul>
             </section>
-            <section class="newsletter-sub">
+            <section class="newsletter-sub" id="sub">
                 <h1>Newsletter</h1>
-                <p>Receba as noticias directo no seu email</p>
+                <p>Receba as noticias directo no seu email, ou no seu whatsapp</p>
                 <form action="" class="newsletter-sub-form center">
+                    <input type="text" placeholder="Nome">
+                    <input type="text" placeholder="Número">
                     <input type="email" placeholder="Seu email">
-                    <button type="submit" class=""><img src="assets/img/icon/send.svg" alt="" srcset=""></button>
+                    <button type="submit" class=""><ion-icon name="send"></ion-icon></button>
                 </form>
             </section>
         </section>
@@ -201,6 +202,8 @@
         </section>
     </footer>
 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- Script -->
     <script src="./assets/js/index.js"></script>
 
@@ -209,22 +212,8 @@
     <script src="./assets/js/smoothScroll/jquery.parallax.js"></script>
     <script src="./assets/js/smoothScroll/owl.carousel.min.js"></script>
     <script src="./assets/js/smoothScroll/custom.js"></script>
+    <script src="./assets/js/lightMode.js"></script>
 
 </body>
-
-<script>
-    // Darck mode
-    const toggle = document.getElementById('darkModeToggle');
-    const toggleMb = document.getElementById('darkModeToggle-mobile');
-    const body = document.body;
-
-    toggle.addEventListener('change', () => {
-        body.classList.toggle('dark-mode', toggle.checked);
-    });
-
-    toggleMb.addEventListener('change', () => {
-        body.classList.toggle('dark-mode', toggleMb.checked);
-    });
-</script>
 
 </html>

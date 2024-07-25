@@ -55,20 +55,40 @@ require_once './controllers/conection.php';
                         <img class="icon-menu" src="./assets/img/icon/menu.webp" alt="menu">
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href=./index.php"" class="nav-link">Home</a></li>
+                        <li><a href="./index.php" class="nav-link">Home</a></li>
                         <li><a href="" class="nav-link">Podcast</a></li>
                         <li><a href="./index.php#about-us" class="nav-link">Sobre nós</a></li>
                         <li><a href="./index.php#contact" class="nav-link">Contactos</a></li>
+                        <li class=" dackmode-btn ">
+                            <label class="switch hide-desktop nav-link">
+                                <input type="checkbox" id="darkModeToggle-mobile">
+                                <span class="icon-s sun">
+                                    <ion-icon class="icon" name="moon"></ion-icon> Dark Mode
+                                </span>
+                                <span class="icon-s moon">
+                                    <ion-icon class="icon" name="sunny"></ion-icon> Light Mode
+                                </span>
+                            </label>
+                        </li>
+                        <li><a href="./newsletter.php" class=" newsletter-button">Newsletter</a></li>
                     </ul>
                 </li>
             </nav>
         </section>
 
+        <label class="switch hide-mobile">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="icon-s sun">
+                <ion-icon class="icon" name="moon"></ion-icon>
+            </span>
+            <span class="icon-s moon">
+                <ion-icon class="icon" name="sunny"></ion-icon>
+            </span>
+        </label>
+
         <a href="./newsletter.php" class="hide-mobile newsletter-button">Newsletter</a>
 
     </header>
-
-    <span class="modeswitcher" id="colorMode"><ion-icon name="sunny"></ion-icon></span>
     <!-- Main Content -->
     <main class="container">
         <section class="newsletter-hero flex col">
@@ -158,11 +178,11 @@ require_once './controllers/conection.php';
                 <img src="./assets/img/logo.svg" alt="Logo do +Kwanza" class="logo">
             </section>
             <section class="navegacao">
-                <h1>Navegaçao</h1>
+                <h1>Navegação</h1>
                 <ul class="flex col">
-                    <li><a href="#hero" class="nav-link">Home</a></li>
-                    <li><a href="#podcasts" class="nav-link">Podcast</a></li>
-                    <li><a href="#about-us" class="nav-link">Sobre nós</a></li>
+                    <li><a href="./index.php#hero" class="nav-link">Home</a></li>
+                    <li><a href="./podcast.php" class="nav-link">Podcast</a></li>
+                    <li><a href="./sobrenos.php" class="nav-link">Sobre nós</a></li>
                     <li><a href="#contact" class="nav-link">Contactos</a></li>
                 </ul>
             </section>
@@ -175,17 +195,19 @@ require_once './controllers/conection.php';
                     <li></li>
                 </ul>
             </section>
-            <section class="newsletter-sub">
+            <section class="newsletter-sub" id="sub">
                 <h1>Newsletter</h1>
-                <p>Receba as noticias direto no seu email</p>
-                <form action="" class="newsletter-sub-form">
+                <p>Receba as noticias directo no seu email, ou no seu whatsapp</p>
+                <form action="" class="newsletter-sub-form center">
+                    <input type="text" placeholder="Nome">
+                    <input type="text" placeholder="Número">
                     <input type="email" placeholder="Seu email">
-                    <button type="submit" class=""><img src="./assets/img/icon/send.svg" alt="" srcset=""></button>
+                    <button type="submit" class=""><ion-icon name="send"></ion-icon></button>
                 </form>
             </section>
         </section>
-        <section class="t-center">
-            <p>©+Kwanza All directs reserved</p>
+        <section class="copy t-center">
+            <p>©+Kwanza 2024, Todos os direitos reservados</p>
         </section>
     </footer>
 
@@ -198,5 +220,6 @@ require_once './controllers/conection.php';
     <script src="./assets/js/order.js"></script>
 
 </body>
+
 
 </html>

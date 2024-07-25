@@ -262,12 +262,14 @@ require_once __DIR__ . '/controllers/conection.php';
                     <li></li>
                 </ul>
             </section>
-            <section class="newsletter-sub">
+            <section class="newsletter-sub" id="sub">
                 <h1>Newsletter</h1>
-                <p>Receba as noticias directo no seu email</p>
+                <p>Receba as noticias directo no seu email, ou no seu whatsapp</p>
                 <form action="" class="newsletter-sub-form center">
+                    <input type="text" placeholder="Nome">
+                    <input type="text" placeholder="Número">
                     <input type="email" placeholder="Seu email">
-                    <button type="submit" class=""><img src="assets/img/icon/send.svg" alt="" srcset=""></button>
+                    <button type="submit" class=""><ion-icon name="send"></ion-icon></button>
                 </form>
             </section>
         </section>
@@ -278,6 +280,8 @@ require_once __DIR__ . '/controllers/conection.php';
 
     <!-- Script -->
     <script src="./assets/js/index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <!-- Smooth Scroll -->
     <script src="./assets/js/smoothScroll/jquery.js"></script>
@@ -287,19 +291,6 @@ require_once __DIR__ . '/controllers/conection.php';
 
 </body>
 
-<script>
-    // Darck mode
-    const toggle = document.getElementById('darkModeToggle');
-    const toggleMb = document.getElementById('darkModeToggle-mobile');
-    const body = document.body;
-
-    toggle.addEventListener('change', () => {
-        body.classList.toggle('dark-mode', toggle.checked);
-    });
-
-    toggleMb.addEventListener('change', () => {
-        body.classList.toggle('dark-mode', toggleMb.checked);
-    });
-</script>
+<script src="./assets/js/lightMode.js"></script>
 
 </html>
