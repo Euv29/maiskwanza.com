@@ -182,7 +182,7 @@ main{
 }
 
 .text-sobrenos{
-    color: var(--text-white);
+    color: #fff;
     font-weight: var(--normal-font);
     font-size: var(--mid-sz);
     width: 40%;
@@ -270,13 +270,12 @@ footer ul{
     border-radius: var(--button-radius);
 }
 .newsletter-sub-form button{
+    color: #fff;
+    font-size: 1.4rem;
     border: none;
     border-radius: var(--button-radius);
     padding: 1rem;
     background: var(--primary-color);
-}
-.newsletter-sub-form button img{
-    width: 1.7rem;
 }
 
 footer .copy{
@@ -372,6 +371,7 @@ footer .copy{
     overflow: hidden;
     border-radius: var(--button-p);
     position: relative;
+    color: #fff;
 }
 .newsletter-background{
     filter: brightness(0.7) contrast(0.9) saturate(0.9);
@@ -570,10 +570,24 @@ footer .copy{
     transition: 0.3s;
 }
 .editor-section{
-    position: relative
+    position: relative;   
+}
+.editor-section form{
+    padding-top: 3rem;
+    gap: 2rem;
+}
+.editor-section form .innerform{
+    gap: 1rem;
 }
 .add_image{
-    width: ;
+
+}
+.add_image img{
+    width: 50rem;
+    height: 30rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2px solid var(--primary-color);
 }
 .back{
     position: absolute;
@@ -581,4 +595,15 @@ footer .copy{
     left: 3rem;
     font-size: 2rem;
     cursor: pointer;
+}
+.input-titulo{
+    padding: 1rem 2rem;
+    border: none;
+    outline: none;
+    border-bottom: var(--primary-color) 0.2rem solid;
+    background: var(--black-color);
+    color: var(--white-color);
+}
+.editor-section textarea{
+    max-height: 46.9rem;
 }
