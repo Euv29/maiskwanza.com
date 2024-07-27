@@ -100,27 +100,29 @@
             <span class="back flex f-center" id="back-button">
                 <ion-icon name="caret-back" ></ion-icon> Voltar
             </span>
-            <form action="" class="flex row">
+            <form action="../config/post.php" method="post" enctype="multipart/form-data" class="flex row">
                 <div class="flex col innerform">
-                    <select name="" id="" class="order">
+                    <select name="categoria" id="categoria" class="order">
                         <option value="">Categoria</option>
-                        <option value="">Inovação</option>
-                        <option value="">Mercado</option>
-                        <option value="">Finanças</option>
-                        <option value="">Negócios</option>
-                        <option value="">Podcast</option>
+                        <option value="Inovação">Inovação</option>
+                        <option value="Mercado">Mercado</option>
+                        <option value="Finanças">Finanças</option>
+                        <option value="Negócios">Negócios</option>
+                        <option value="Podcast">Podcast</option>
                     </select>
-
+        
                     <section class="add_image" id="imagem">
                         <img src="../assets/img/Frame 15.png" alt="" id="foto">
-                        <input type = "file" id="foto_capa" class="off" name = "foto_capa" accept="image/*" required>
+                        <input type="file" id="foto_capa" class="off" name="foto_capa" accept="image/*" required>
                     </section>
                 </div>
                 <div class="flex col innerform">
                     <input type="text" name="titulo" class="input-titulo" placeholder="Título do artigo">
-                    <textarea name="" id="editorTextarea"></textarea>
+                    <textarea name="conteudo" id="editorTextarea"></textarea>
                 </div>
+                <button type="submit">Postar Notícia</button>
             </form>
+        
         </section>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

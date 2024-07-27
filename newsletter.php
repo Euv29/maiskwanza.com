@@ -1,4 +1,20 @@
-<?php require_once 'controllers/conection.php'; ?>
+<?php require_once 'controllers/conection.php'; 
+include './config/conexao.php';
+
+// Consulta para obter a última notícia postada
+$sql = "SELECT Categoria, Titulo, Conteudo, ImgUrl, DataCriacao FROM Newsletter_tb ORDER BY DataCriacao DESC LIMIT 1";
+$result = $conexao->query($sql);
+
+if ($result->num_rows > 0) {
+    $ultimaNoticia = $result->fetch_assoc();
+} else {
+    $ultimaNoticia = null;
+}
+
+$conexao->close();
+
+?>
+
 
 <!DOCTYPE html>
 
@@ -119,87 +135,39 @@
         <section class="content newsletter-container flex row">
             <section class="newsletter col flex">
                 <section class="capa flex f-center">
-                    <h2 class="data">21/07/2024</h2>
-                    <h2 class="assunto">Finanças</h2>
-                    <img src="./assets/img/primary.png" alt="" class="newsletter-background">
+                <?php if ($ultimaNoticia): ?>
+                    <h2 class="data"><?php echo $ultimaNoticia['DataCriacao']; ?></h2>
+                    <h2 class="assunto"><?php echo $ultimaNoticia['Categoria']; ?></h2>
+                    <img src="<?php echo $ultimaNoticia['ImgUrl']; ?>" alt="Imagem da notícia" class="newsletter-background">
                     <section class="titulo t-center">
-                        <h1>Os Bancos mais lucrativos em Angola em 2024</h1>
-                        <p>Bancos Angolanos Registram Lucros Recordes em 2024</p>
+                        <h1><?php echo $ultimaNoticia['Titulo']; ?></h1>
                     </section>
                 </section>
-
+                <?php else: ?>
+                    <p>Não há notícias disponíveis.</p>
+                <?php endif; ?>
+            <?php if ($ultimaNoticia): ?>
                 <section class="newsletter-content">
-                    <p>
-                        Luanda, 20 de julho de 2024 – Em um cenário econômico desafiador, os bancos angolanos se destacaram ao registrar
-                        lucros recordes no primeiro semestre de 2024. A estabilidade econômica, as reformas no setor financeiro e o aumento
-                        da confiança dos investidores foram fatores cruciais para esse desempenho excepcional.</p>
-
-                    <h2>Banco Nacional de Angola Lidera o Ranking</h2>
-                    <p> O Banco Nacional de Angola (BNA) lidera a lista dos bancos mais lucrativos, reportando um lucro líquido de 150 bilhões
-                        de kwanzas no primeiro semestre de 2024. Este resultado representa um aumento de 25% em relação ao mesmo período do ano anterior.
-                        O crescimento foi impulsionado pela expansão das operações de crédito e pela melhoria na gestão de ativos.</p>
-
-                    <h2>Banco de Poupança e Crédito (BPC) Apresenta Resultados Sólidos</h2>
-                    <p>O Banco de Poupança e Crédito (BPC) também registrou um desempenho impressionante, com um lucro líquido de 120 bilhões de kwanzas,
-                        um aumento de 20% em comparação com 2023. A digitalização dos serviços bancários e a implementação de novas tecnologias de pagamento
-                        foram fundamentais para este crescimento.</p>
-
-                    <h2>Banco de Fomento Angola (BFA) Continua a Crescer</h2>
-                    <p>O Banco de Fomento Angola (BFA) manteve sua trajetória de crescimento, alcançando um lucro líquido de 110 bilhões de kwanzas.
-                        A instituição se destacou pela diversificação de seus produtos financeiros e pela forte presença no mercado de câmbio.</p>
-
-                    <h2>Reformas e Estabilidade Econômica Impulsionam o Setor</h2>
-                    <p>Analistas atribuem esses resultados positivos às recentes reformas econômicas implementadas pelo governo angolano,
-                        que visam melhorar o ambiente de negócios e atrair investimentos estrangeiros.
-                        A estabilidade da taxa de câmbio e a inflação controlada também contribuíram para a confiança dos investidores e para o crescimento do setor bancário.</p>
-
-                    <h2>Perspectivas para o Futuro</h2>
-                    <p>Olhando para o futuro, os bancos angolanos estão otimistas. A expectativa é de que o setor continue a crescer, impulsionado pela recuperação econômica global e pelo aumento da demanda
-                        por serviços financeiros modernos. A digitalização e a inovação serão fatores chave para manter o crescimento e a competitividade no mercado.</p>
-
-                    <h2>Comentários de Especialistas</h2>
-                    <p><em>“Os resultados dos bancos angolanos em 2024 são um reflexo direto das reformas econômicas e da melhoria do ambiente de negócios no país. A continuidade dessas políticas será essencial para sustentar o crescimento do setor financeiro nos próximos anos”</em>, afirmou João Mendes, economista do Instituto de Pesquisa Econômica de Angola.</p>
-                    <br>
-                    <p><em>“Os bancos que investiram em tecnologia e inovação estão colhendo os frutos agora. A digitalização não é apenas uma tendência, mas uma necessidade para permanecer competitivo”</em>, comentou Maria Silva, especialista em Finanças do Banco Mundial.</p>
+                    <?php  echo $ultimaNoticia['Conteudo']; ?>
                 </section>
+            <?php endif; ?>
             </section>
             <section class="newsletter-recomendation">
                 <section class="recomendation-card-area col flex f-center">
-
-                    <a href="" class="newsletter-recomendation-card col flex f-center">
-                        <img src="./assets/img/micro.jpg" alt="" class="newsletter-background">
-                        <h2 class="assunto">Startups</h2>
-                        <section class="description">
-                            <h1>Conheça a startup vencedora do centro de ivest...</h1>
-                            <h2>A xtal é uma startup de Lorem ipsum dolor sit amet consectetur </h2>
-                        </section>
-
-                    </a>
-
-                    <a class="newsletter-recomendation-card col flex f-center">
-                        <img src="./assets/img/micro.jpg" alt="" class="newsletter-background">
-                        <h2 class="assunto">Startups</h2>
-                        <section class="description">
-                            <h1>Conheça a startup vencedora do centro de ivest...</h1>
-                            <h2>A xtal é uma startup de Lorem ipsum dolor sit amet consectetur </h2>
-                        </section>
-                    </a>
-                    <a class="newsletter-recomendation-card col flex f-center">
-                        <img src="./assets/img/micro.jpg" alt="" class="newsletter-background">
-                        <h2 class="assunto">Startups</h2>
-                        <section class="description">
-                            <h1>Conheça a startup vencedora do centro de ivest...</h1>
-                            <h2>A xtal é uma startup de Lorem ipsum dolor sit amet consectetur </h2>
-                        </section>
-                    </a>
-                    <a class="newsletter-recomendation-card col flex f-center">
-                        <img src="./assets/img/micro.jpg" alt="" class="newsletter-background">
-                        <h2 class="assunto">Startups</h2>
-                        <section class="description">
-                            <h1>Conheça a startup vencedora do centro de ivest...</h1>
-                            <h2>A xtal é uma startup de Lorem ipsum dolor sit amet consectetur </h2>
-                        </section>
-                    </a>
+                    <?php if ($noticias && count($noticias) > 1): ?>
+                        <?php for ($i = 1; $i < count($noticias); $i++): ?>
+                            <a href="noticia.php?id=<?php echo $noticias[$i]['id']; ?>" class="newsletter-recomendation-card col flex f-center">
+                                <img src="<?php echo htmlspecialchars($noticias[$i]['FotoCapa']); ?>" alt="Imagem da notícia" class="newsletter-background">
+                                <h2 class="assunto"><?php echo htmlspecialchars($noticias[$i]['Categoria']); ?></h2>
+                                <section class="description">
+                                    <h1><?php echo htmlspecialchars($noticias[$i]['Titulo']); ?></h1>
+                                    <h2><?php echo mb_strimwidth(strip_tags($noticias[$i]['Conteudo']), 0, 80, '...'); ?></h2>
+                                </section>
+                            </a>
+                        <?php endfor; ?>
+                    <?php else: ?>
+                        <p>Não há notícias recomendadas disponíveis.</p>
+                    <?php endif; ?>
                 </section>
             </section>
         </section>
