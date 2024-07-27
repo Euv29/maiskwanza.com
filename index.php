@@ -1,6 +1,23 @@
 <?php
 //require_once 'controllers/conection.php'; 
 require_once __DIR__ . '/controllers/conection.php';
+
+include './config/conexao.php';
+
+$sql = "SELECT id_noticia, Categoria, Titulo, ImgUrl FROM Newsletter_tb ORDER BY DataCriacao DESC LIMIT 2";
+$result = $conexao->query($sql);
+
+$noticias = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $noticias[] = $row;
+    }
+} else {
+    $noticias = null;
+}
+
+$conexao->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -186,29 +203,28 @@ require_once __DIR__ . '/controllers/conection.php';
 
         <!-- Newsletter -->
         <section class="newsletter-area content flex col a-center">
-            <section class="title">
-                <h1>Newsletter</h1>
-                <h2>Saiba o que está a acontecer no mundo dos negócios</h2>
-            </section>
-            <section class="newsletter-card-area flex row scaleup">
-                <a class="newsletter-card">
-                    <h2 class="assunto">Economia</h2>
-                    <section class="description">
-                        <h1>Os Bancos mais lucrativos em 2023</h1>
-                        <h2>Lorem ipsum dolor sit amet consectetur...</h2>
-                    </section>
-                </a>
-                <a class="newsletter-card">
-                    <h2 class="assunto">Startups</h2>
-                    <section class="description">
-                        <h1>Conheça a startup vencedora do centro de ivest...</h1>
-                        <h2>A xtal é uma startup de Lorem ipsum dolor sit amet consectetur </h2>
-                    </section>
-                </a>
-            </section>
-            <a href="./newsletter.php" class="newsletter-button scaleup">
-                <h2>Ver mais</h2>
-            </a>
+        <section class="title">
+            <h1>Newsletter</h1>
+            <h2>Saiba o que está a acontecer no mundo dos negócios</h2>
+        </section>
+        <section class="newsletter-card-area flex row scaleup">
+            <?php if ($noticias && count($noticias) > 0): ?>
+                <?php foreach ($noticias as $noticia): ?>
+                    <a href="newsletter.php?id=<?php echo $noticia['id_noticia']; ?>" class="newsletter-card">
+                        <h2 class="assunto"><?php echo htmlspecialchars($noticia['Categoria']); ?></h2>
+                        <section class="description">
+                            <h1><?php echo htmlspecialchars($noticia['Titulo']); ?></h1>
+                            <h2><?php echo mb_strimwidth(strip_tags($noticia['Conteudo']), 0, 80, '...'); ?></h2>
+                        </section>
+                    </a>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Não há notícias disponíveis.</p>
+            <?php endif; ?>
+        </section>
+        <a href="./newsletter.php" class="newsletter-button scaleup">
+            <h2>Ver mais</h2>
+        </a>
         </section>
 
         <!-- Contactos -->
@@ -265,10 +281,10 @@ require_once __DIR__ . '/controllers/conection.php';
             <section class="newsletter-sub" id="sub">
                 <h1>Newsletter</h1>
                 <p>Receba as noticias directo no seu email, ou no seu whatsapp</p>
-                <form action="" class="newsletter-sub-form center">
-                    <input type="text" placeholder="Nome">
-                    <input type="text" placeholder="Número">
-                    <input type="email" placeholder="Seu email">
+                <form action="./config/newsletterSub.php" method="post" class="newsletter-sub-form center">
+                    <input type="text" placeholder="Nome" name="nome">
+                    <input type="text" placeholder="Número" name="numero">
+                    <input type="email" placeholder="Seu email" name="email">
                     <button type="submit" class=""><ion-icon name="send"></ion-icon></button>
                 </form>
             </section>

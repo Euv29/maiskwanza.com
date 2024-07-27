@@ -35,7 +35,6 @@ body{
 
 body.dark-mode {
     /* COLOURS */
-    --primary-color: #F27405;
     --black-color: #FFFFFF;
     --dark-color: #ececec2f;
     --white-color: #000000;
@@ -44,7 +43,6 @@ body.dark-mode {
     --gray-color: #929292;
     --cian-color: #05f2db;
     --transparent-black: #EBEBEB;
-    --button-hover: #863f00;
 }
 
 

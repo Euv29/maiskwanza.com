@@ -1,3 +1,12 @@
+<?php
+// Inclua o arquivo de conexão
+include '../config/conexao.php';
+
+// Consulta para buscar todos os assinantes
+$sql = "SELECT Id_sub, Nome, Numero, Email, DataInscricao FROM subscribers_tb";
+$result = $conexao->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,12 +35,12 @@
             <a href="" class="ative">Dashboard</a>
             <a href="./admnewsletter.html">Newsletter</a>
             <a href="">Destaques</a>
-            <a href="./subscribers.php">Subscritos</a>
+            <a href="">Subscritos</a>
         </nav>
     </header>
     <main class="main-adm container"> 
         <section class="header-section flex row j-between">
-            <h1>Dashboard</h1>
+            <h1>Lista de assinantes</h1>
             <section class="user-info flex row a-center" id="user-info">
                 <p class="">useremail@maiskwanza.com</p>
                 <ion-icon name="person-circle" ></ion-icon>
@@ -43,45 +52,34 @@
                 <a href="">Sair</a>
             </section>
         </section>
-        <section class="stats-card-area content flex row f-center">
-            <section class="stat-card">
-                <img src="../assets/img/icon/news-icon.svg" alt="">
-                <section class="stat-description">
-                    <h2>Newsletter subscribers</h2>
-                    <h1>34</h1>
-                </section>
-            </section>
-            <section class="stat-card">
-                <img src="../assets/img/icon/news-icon.svg" alt="">
-                <section class="stat-description">
-                    <h2>Newsletter subscribers</h2>
-                    <h1>34</h1>
-                </section>
-            </section>
-            <section class="stat-card">
-                <img src="../assets/img/icon/news-icon.svg" alt="">
-                <section class="stat-description">
-                    <h2>Newsletter subscribers</h2>
-                    <h1>34</h1>
-                </section>
-            </section>
-        </section>
-
-        <section class="action-card-area content flex row f-center">
-            
-            <section class="action-card">
-                <ion-icon name="newspaper"></ion-icon>
-                <section class="stat-description">
-                    <h2>Escrever uma notícia</h2>
-                </section>
-            </section>
-            <section class="action-card">
-                <ion-icon name="newspaper"></ion-icon>
-                <section class="stat-description">
-                    <h2>Escrever uma notícia</h2>
-                </section>
-            </section>
-        </section>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Número</th>
+                <th>Email</th>
+                <th>Data de Inscrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["Id_sub"] . "</td>";
+                    echo "<td>" . $row["Nome"] . "</td>";
+                    echo "<td>" . $row["Numero"] . "</td>";
+                    echo "<td>" . $row["Email"] . "</td>";
+                    echo "<td>" . $row["DataInscricao"] . "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='5'>Nenhum assinante encontrado</td></tr>";
+            }
+            ?>
+        </tbody>
+    </table>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
